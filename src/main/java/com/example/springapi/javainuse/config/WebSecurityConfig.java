@@ -53,6 +53,7 @@ public class WebSecurityConfig {
         httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeRequests()
+                .requestMatchers("/swagger-ui.html").permitAll()
                 .requestMatchers("/authenticate").permitAll()
                 .anyRequest().authenticated();
 
