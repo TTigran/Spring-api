@@ -5,7 +5,6 @@ com/example/springapi/api/repository/UserRepository.class
 com/example/springapi/api/controller/JwtAuthenticationController.class
 com/example/springapi/api/model/JwtResponse.class
 com/example/springapi/api/controller/UserController.class
-com/example/springapi/javainuse/config/SwaggerConfig.class
 com/example/springapi/javainuse/config/WebSecurityConfig.class
 com/example/springapi/javainuse/config/jwt/JwtRequestFilter.class
 com/example/springapi/api/service/UserService.class

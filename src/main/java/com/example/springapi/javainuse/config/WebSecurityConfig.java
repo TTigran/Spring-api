@@ -24,6 +24,14 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableMethodSecurity(securedEnabled = true, prePostEnabled = true, jsr250Enabled = true)
 @RequiredArgsConstructor
 public class WebSecurityConfig {
+
+    private static final String[] AUTH_WHITE_LIST = {
+            "/v3/api-docs/**",
+            "/swagger-ui/**",
+            "/v2/api-docs/**",
+            "/swagger-resources/**"
+    };
+
     @Autowired
     private JwtUserDetailsService jwtUserDetailsService;
 
@@ -53,8 +61,8 @@ public class WebSecurityConfig {
         httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeRequests()
-                .requestMatchers("/swagger-ui.html").permitAll()
                 .requestMatchers("/authenticate").permitAll()
+                .requestMatchers(AUTH_WHITE_LIST).permitAll()
                 .anyRequest().authenticated();
 
 
